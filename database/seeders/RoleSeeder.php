@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
 {
@@ -37,12 +37,8 @@ class RoleSeeder extends Seeder
             'SCOUT STUDENT',
         ];
 
-        foreach ($roles as $role) {
-            DB::table('roles')->insert([
-                'role_name' => $role,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+        foreach ($roles as $roleName) {
+            Role::firstOrCreate(['name' => $roleName, 'guard_name' => 'web']);
         }
     }
 }

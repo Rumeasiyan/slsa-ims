@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
             ProvinceSeeder::class,
             DistrictSeeder::class,
             DesignationSeeder::class,
+            MemberCategorySeeder::class,
+            PositionLevelSeeder::class,
+            PositionSeeder::class,
         ]);
 
         $adminRole = Role::where('name', 'ADMIN SUPERVISOR')->first();

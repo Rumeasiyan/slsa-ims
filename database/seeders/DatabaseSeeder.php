@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             MemberCategorySeeder::class,
             PositionLevelSeeder::class,
             PositionSeeder::class,
+            EducationalQualificationTypeSeeder::class,
+            AlStreamSeeder::class,
         ]);
 
         $adminRole = Role::where('name', 'ADMIN SUPERVISOR')->first();

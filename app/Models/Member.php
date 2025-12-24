@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Member extends Model
+{
+    protected $fillable = [
+        'type',
+    ];
+
+    public function positions(): HasMany
+    {
+        return $this->hasMany(MemberPosition::class);
+    }
+
+    public function groupMembers(): HasMany
+    {
+        return $this->hasMany(GroupMember::class);
+    }
+}

@@ -44,5 +44,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DistrictSeeder::class);
         $this->call(SectionSeeder::class);
         $this->call(PositionSeeder::class);
+        $this->call(TrainingProgramSeeder::class);
+        $this->call(PhaseSeeder::class);
     }
 }

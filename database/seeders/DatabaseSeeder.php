@@ -46,5 +46,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PositionSeeder::class);
         $this->call(TrainingProgramSeeder::class);
         $this->call(PhaseSeeder::class);
+        $this->call(AwardSeeder::class);
     }
 }

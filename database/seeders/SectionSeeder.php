@@ -15,6 +15,7 @@ class SectionSeeder extends Seeder
             ['name' => 'Junior Scout', 'age' => '11-14 years'],
             ['name' => 'Senior Scout', 'age' => '14-17 years'],
             ['name' => 'Rover', 'age' => '17-26 years'],
+            ['name' => 'Scout Master', 'age' => ' '],
         ];
 
         foreach ($sections as $section) {

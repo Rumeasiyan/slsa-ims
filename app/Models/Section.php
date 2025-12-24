@@ -16,4 +16,9 @@ class Section extends Model
     {
         return $this->hasMany(Group::class);
     }
+
+    public function awards(): HasMany
+    {
+        return $this->hasMany(Award::class);
+    }
 }

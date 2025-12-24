@@ -99,4 +99,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Warrant::class);
     }
+
+    public function trainingDetails(): HasMany
+    {
+        return $this->hasMany(TrainingDetail::class);
+    }
 }

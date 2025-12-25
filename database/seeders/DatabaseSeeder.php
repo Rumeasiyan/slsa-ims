@@ -15,6 +15,22 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call(RoleSeeder::class);
+
+        $admin = User::firstOrCreate(
+            ['email' => 'admin@slsa.lk'],
+            [
+                'name' => 'Admin User',
+                'password' => 'password',
+                'email_verified_at' => now(),
+            ]
+        );
+
+        $adminRole = \Spatie\Permission\Models\Role::where('name', 'ADMIN')->first();
+        if ($adminRole && ! $admin->hasRole('ADMIN')) {
+            $admin->assignRole($adminRole);
+        }
+
         User::firstOrCreate(
             ['email' => 'test@example.com'],
             [
@@ -24,6 +40,12 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $this->call(RoleSeeder::class);
+        $this->call(ProvinceSeeder::class);
+        $this->call(DistrictSeeder::class);
+        $this->call(SectionSeeder::class);
+        $this->call(PositionSeeder::class);
+        $this->call(TrainingProgramSeeder::class);
+        $this->call(PhaseSeeder::class);
+        $this->call(AwardSeeder::class);
     }
 }
